@@ -1,0 +1,75 @@
+{
+  "name": "@rendela/vite",
+  "version": "1.0.6",
+  "description": "A tool for pre-rendering pages of your SPA to improve SEO and performance",
+  "author": "llopary",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "rendela": "dist/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rendela/vite"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./config": {
+      "import": "./dist/config.js",
+      "types": "./dist/types/config.d.ts"
+    },
+    "./server": {
+      "import": "./dist/server.js",
+      "types": "./dist/types/server.d.ts"
+    },
+    "./crawler": {
+      "import": "./dist/crawler.js",
+      "types": "./dist/types/crawler.d.ts"
+    },
+    "./logUtils": {
+      "import": "./dist/utils/logUtils.js",
+      "types": "./dist/types/utils/logUtils.d.ts"
+    },
+    "./cli": {
+      "import": "./dist/cli.js",
+      "types": "./dist/types/cli.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepare": "tsc",
+    "pub": "bash ./pub.sh",
+    "postinstall": "npx playwright install chromium"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^5.4.20"
+  },
+  "dependencies": {
+    "playwright": "1.56.1"
+  },
+  "keywords": [
+    "vite",
+    "plugin",
+    "pre-render",
+    "playwright",
+    "seo",
+    "spa",
+    "rendela"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
